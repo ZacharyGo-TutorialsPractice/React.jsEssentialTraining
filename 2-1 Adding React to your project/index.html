@@ -31,8 +31,8 @@
               We serve the most {props.adjective} food around
             </p>
             <ul>
-              {props.dishes.map((dish) => (
-                <li>{dish}</li>
+              {props.dishes.map((dish, i) => (
+                <li key={i}>{dish}</li>
               ))}
               </ul>
  
