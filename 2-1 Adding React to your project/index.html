@@ -16,27 +16,54 @@
   <body>
     <div id="root"></div>
     <script type="text/babel">
-      function Header() {
+      function Header(props) {
+        
         return (
         <header>
-          <h1>Eve's Kitchen</h1>
+          <h1>{props.name}'s Kitchen</h1>
         </header>
         );
       }
-      function Main() {
+      function Main(props) {
         return (
           <section>
             <p>
-              We serve the most delicious food around
+              We serve the most {props.adjective} food around
             </p>
+            <ul>
+              {props.dishes.map((dish) => (
+                <li>{dish}</li>
+              ))}
+              </ul>
+ 
           </section>
         );
       }
+      function Footer(props) {
+        return (
+          <footer>
+            <p>
+              Copyright {props.year}
+            </p>
+          </footer>
+        );
+      }
+
+      const dishes = [
+        "Black Bean Soup",
+        "Macaroni nd Cheese",
+        "Salmon and Potatoes",
+        "Pizza"
+      ]
       function App() {
         return (
           <div>
-            <Header />
-            <Main />
+            <Header name="Zach" />
+            <Main 
+              adjective="amazing" 
+              dishes={dishes} 
+            />
+            <Footer year={new Date().getFullYear()} />
         </div>
         );
       }
