@@ -1,23 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
 
-function App() {
+const [firstCity,second] = ["Tokyo", "Tahoe City", "Bend"];
+
+
+function App({ library }) {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Hello from {library}</h1>
+      <h2>{firstCity}</h2>
+      <h3>{second}</h3>
     </div>
   );
 }
