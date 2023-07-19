@@ -31,8 +31,10 @@
               We serve the most {props.adjective} food around
             </p>
             <ul>
-              {props.dishes.map((dish, i) => (
-                <li key={i}>{dish}</li>
+              {props.dishes.map((dish) => (
+                <li key={dish.id}>
+                  {dish.title}
+                </li>
               ))}
               </ul>
  
@@ -55,13 +57,19 @@
         "Salmon and Potatoes",
         "Pizza"
       ]
+      const dishObject = dishes.map(
+        (dish, i) => ({
+          id: i,
+          title: dish
+      }));
+
       function App() {
         return (
           <div>
             <Header name="Zach" />
             <Main 
               adjective="amazing" 
-              dishes={dishes} 
+              dishes={dishObject} 
             />
             <Footer year={new Date().getFullYear()} />
         </div>
