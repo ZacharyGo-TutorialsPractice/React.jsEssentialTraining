@@ -32,11 +32,16 @@
           </section>
         );
       }
+      function App() {
+        return (
+          <div>
+            <Header />
+            <Main />
+        </div>
+        );
+      }
       ReactDOM.render(
-        <div>
-          <Header />
-          <Main />
-        </div>,
+        <App />,
         document.getElementById("root")
       );
     </script>
